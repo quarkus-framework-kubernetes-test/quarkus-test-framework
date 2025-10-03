@@ -15,7 +15,7 @@ jobs:
       contains(github.event.comment.body, 'run kubernetes')
     outputs:
       comment_id: ${{ steps.create_comment.outputs.result }}
-      head_sha: ${{ steps.get_pr_sha.outputs.result }}
+      head_sha: ${{ steps.get_pr_sha.outputs.pr_sha }}
     steps:
       - name: Get PR SHA
         id: get_pr_sha
@@ -27,7 +27,8 @@ jobs:
               repo: context.repo.repo,
               pull_number: context.issue.number
             });
-            return pr.data.head.sha;
+            // This can't be return as it will pass the sha with quotes
+            core.setOutput('pr_sha', pr.data.head.sha);
       - name: Comment PR with Link
         id: create_comment
         uses: actions/github-script@v8
