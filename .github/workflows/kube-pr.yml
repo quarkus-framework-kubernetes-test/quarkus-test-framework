@@ -62,7 +62,7 @@ jobs:
   update-comment:
     name: Update comment
     runs-on: ubuntu-latest
-    needs: [ write-comment, kubernetes-build-jvm-latest, kubernetes-build-native-latest ]
+    needs: [ write-comment, kubernetes-build-jvm-latest ]
     if: always()
     steps:
       - name: Update PR comment with status
