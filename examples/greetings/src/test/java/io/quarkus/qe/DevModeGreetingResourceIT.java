@@ -41,7 +41,7 @@ public class DevModeGreetingResourceIT {
 
     @Test
     @Order(2)
-    public void shouldUpdateResourcesAndSources() {
+    public void shouldUpdateResourcesAndSourcesa() {
         // Should say first Victor (the default name)
         app.given().get("/greeting").then().statusCode(HttpStatus.SC_OK).body(is(HELLO_IN_ENGLISH + ", I'm " + VICTOR_NAME));
 
