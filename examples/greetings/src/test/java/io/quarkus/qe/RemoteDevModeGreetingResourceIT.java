@@ -15,7 +15,7 @@ import io.quarkus.test.utils.AwaitilityUtils;
 @QuarkusScenario
 public class RemoteDevModeGreetingResourceIT {
 
-    static final String VICTOR_NAME = "victor";
+    static final String VICTOR_NAME = "victorr";
 
     static final String HELLO_IN_ENGLISH = "Hello";
     static final String HELLO_IN_SPANISH = "Hola";
